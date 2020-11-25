@@ -1,0 +1,75 @@
+version: "2.0"
+
+intents:
+  - saudacao
+  - adeus
+  - funcionalidades
+  - ano
+  - curiosidades
+  - data
+  - matematica
+
+entities:
+  - tipo
+
+responses:
+  utter_saudacao:
+  - text: >
+      Olá, sou o Numbot. Como posso te ajudar? \n
+      Pode me perguntar diversas coisas sobre números ou datas. \n
+      Caso não tenha muita certeza do que dizer, pode me perguntar ou então pedir informações interessantes sobre qualquer número ;)
+
+  utter_adeus:
+  - text: >
+      Então tá certo, obrigado pela conversa :) \n
+      Se precisar de mais qualquer coisa pode me perguntar ;)
+  - text: >
+      Então tá certo, obrigado pela conversa :) \n
+      Estarei à disposição para qualquer outra pergunta sobre o mundo dos números ;)
+  - text: >
+      Então tá certo, obrigado pela conversa :) \n
+      Qualquer outra coisa que queira saber sobre o mundo dos números pode me perguntar ;)
+  - text: >
+      Então nos vemos em outra oportunidade :) \n
+      Se precisar de mais qualquer coisa pode me perguntar ;)
+  - text: >
+      Então nos vemos em outra oportunidade :) \n
+      Estarei à disposição para qualquer outra pergunta sobre o mundo dos números ;)
+  - text: >
+      Então nos vemos em outra oportunidade :) \n
+      Qualquer outra coisa que queira saber sobre o mundo dos números pode me perguntar ;)
+  - text: >
+      Foi muito bom conversar com você :) \n
+      Se precisar de mais qualquer coisa pode me perguntar ;)
+  - text: >
+      Foi muito bom conversar com você :) \n
+      Estarei à disposição para qualquer outra pergunta sobre o mundo dos números ;)
+  - text: >
+      Foi muito bom conversar com você :) \n
+      Qualquer outra coisa que queira saber sobre o mundo dos números pode me perguntar ;)
+
+  utter_fallback:
+  - text: "Eu não entendi. Você pode tentar reformular a frase."
+  - text: "Você pode reformular sua afirmação? Eu não estou entendendo."
+  - text: "Eu não entendi o sentido."
+  - text: "Eita, acho que não consegui entender, poderia me dizer de outra maneira?"
+  - text: "Vix, tá difícil aqui pra mim, pode repetir o que você falou, só que de outro modo?"
+
+  utter_funcionalidades:
+  - text: >
+      Eu posso lhe ajudar de várias maneiras, lhe dando informações interessantes sobre os números. \n
+      Posso fornecer informações sobre curiosidades, matemática, algum ano específico ou alguma data. \n
+      Se quiser fazer um teste pode fazer a pergunta: \"Quero saber curiosidades sobre qualquer número\".
+      Só tente não utilizar os pronomes indefinidos \"um\" e \"uma\", pois posso acabar me confundindo com o numeral 1 ;)
+
+  utter_ano:
+  - text: "ano"
+
+  utter_curiosidades:
+  - text: "curiosidades"
+
+  utter_data:
+  - text: "data"
+
+  utter_matematica:
+  - text: "matematica"

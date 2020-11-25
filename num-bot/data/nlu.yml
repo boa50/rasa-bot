@@ -1,0 +1,92 @@
+version: "2.0"
+
+nlu:
+- intent: saudacao
+  examples: |
+    - oi
+    - olá
+    - ola
+    - bom dia
+    - boa tarde
+    - boa noite
+- intent: adeus
+  examples: |
+    - até a próxima
+    - até mais
+    - muito obrigado
+    - obrigado
+    - obrigado pelas informações
+    - somente isso
+    - tchau
+    - xau
+- intent: funcionalidades
+  examples: |
+    - como faço para perguntar algo
+    - como você pode me ajudar
+    - o que dá para fazer com você
+    - o que posso perguntar para você
+    - o que você sabe fazer
+    - quais ações posso tomar
+    - quais as funcionalidades você possui
+    - quais perguntas posso fazer
+- intent: ano
+  examples: |
+    - [year](tipo) aleatório
+    - me mostre algo interessante sobre algum [year](tipo)
+    - o [year](tipo) 2000 teve o que de especial
+    - quais informações você pode me dizer sobre o [year](tipo) 1950
+    - queria saber informações sobre algum [year](tipo) interessante
+- intent: curiosidades
+  examples: |
+    - gostaria de saber [trivia](tipo) sobre o número 42
+    - me informe [trivia](tipo) sobre qualquer número
+    - me mostre [trivia](tipo) sobre o número 50
+    - o número 7 possui quais [trivia](tipo)
+    - quero saber [trivia](tipo) sobre algum número
+    - quero saber [trivia](tipo) sobre um número aleatório
+    - me diga alguma [trivia](tipo)
+- intent: data
+  examples: |
+    - me diga algo bem legal sobre qualquer [date](tipo)
+    - me diga informações sobre a [date](tipo) 20/03
+    - na [date](tipo) de 29/03 acontece o que de especial
+    - quero saber algo sobre o [date](tipo) 11 de setembro
+    - quero saber sobre uma [date](tipo) aleatória
+- intent: matematica
+  examples: |
+    - me diga algumas informações [math](tipo) sobre qualquer número
+    - me fale informações [math](tipo) sobre o número 123
+    - me informe sobre situações [math](tipo)
+    - quero saber coisas [math](tipo) sobre o número 7
+    - quero saber o que a [math](tipo) diz de interessante sobre o número 50
+
+- synonym: date
+  examples: |
+    - data
+    - data histórica
+    - data historica
+    - dia
+    - período
+    - periodo
+- synonym: math
+  examples: |
+    - matemática
+    - matemáticas
+    - matemático
+    - matemáticos
+    - matematica
+    - matematicas
+    - matematico
+    - matematicos
+- synonym: trivia
+  examples: |
+    - coisas interessantes
+    - curiosidade
+    - curiosidades
+    - interessantes
+    - trivialidades
+    - trivias
+- synonym: year
+  examples: |
+    - ano
+    - anual
