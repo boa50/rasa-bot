@@ -31,34 +31,44 @@ nlu:
     - quais perguntas posso fazer
 - intent: ano
   examples: |
-    - [year](tipo) aleatório
-    - me mostre algo interessante sobre algum [year](tipo)
-    - o [year](tipo) 2000 teve o que de especial
-    - quais informações você pode me dizer sobre o [year](tipo) 1950
-    - queria saber informações sobre algum [year](tipo) interessante
+    - [ano](tipo) aleatório
+    - me mostre algo interessante sobre algum [ano](tipo)
+    - o [ano](tipo) [2000](numero) teve o que de especial
+    - quais informações você pode me dizer sobre o [ano](tipo) [1950](numero)
+    - queria saber informações sobre algum [ano](tipo) interessante
+    - desejo saber coisa [anual](tipo)
+    - [ano](tipo) [2020](numero)
+    - [anual](tipo) qualquer
 - intent: curiosidades
   examples: |
-    - gostaria de saber [trivia](tipo) sobre o número 42
-    - me informe [trivia](tipo) sobre qualquer número
-    - me mostre [trivia](tipo) sobre o número 50
-    - o número 7 possui quais [trivia](tipo)
-    - quero saber [trivia](tipo) sobre algum número
-    - quero saber [trivia](tipo) sobre um número aleatório
-    - me diga alguma [trivia](tipo)
+    - gostaria de saber [trivias](tipo) sobre o número [42](numero)
+    - me informe [trivialidades](tipo) sobre qualquer número
+    - me mostre [curiosidades](tipo) sobre o número [50](numero)
+    - o número [7](numero) possui quais [curiosidades](tipo)
+    - quero saber [curiosidade](tipo) sobre algum número
+    - quero saber [coisas interessantes](tipo) sobre um número aleatório
+    - me diga alguma [coisa interessante](tipo)
+    - [curiosidade](tipo) [10000](numero)
+    - [coisa interessante](tipo) qualquer
 - intent: data
   examples: |
-    - me diga algo bem legal sobre qualquer [date](tipo)
-    - me diga informações sobre a [date](tipo) 20/03
-    - na [date](tipo) de 29/03 acontece o que de especial
-    - quero saber algo sobre o [date](tipo) 11 de setembro
-    - quero saber sobre uma [date](tipo) aleatória
+    - me diga algo bem legal sobre qualquer [data](tipo)
+    - me diga informações sobre a [data histórica](tipo) de [20/03](dia_mes)
+    - na [data histórica](tipo) de [29/03](dia_mes) acontece o que de especial
+    - quero saber algo sobre o [dia](tipo) [11/09](dia_mes)
+    - quero saber sobre uma [data histórica](tipo) aleatória
+    - [dia](tipo) [14/10](dia_mes)
+    - [data] aleatória
 - intent: matematica
   examples: |
-    - me diga algumas informações [math](tipo) sobre qualquer número
-    - me fale informações [math](tipo) sobre o número 123
-    - me informe sobre situações [math](tipo)
-    - quero saber coisas [math](tipo) sobre o número 7
-    - quero saber o que a [math](tipo) diz de interessante sobre o número 50
+    - me diga algumas informações [matemáticas](tipo) sobre qualquer número
+    - me fale informações [matemáticas](tipo) sobre o número [123](numero)
+    - me informe sobre situação [matemática](tipo)
+    - quero saber coisas [matematicas](tipo) sobre o número [7](numero)
+    - quero saber o que a [matemática](tipo) diz de interessante sobre o número [50](numero)
+    - o que um [matemático](tipo) pode me dizer sobre o número [1837](numero)
+    - [matemáticos](tipo) qualquer
+    - [matemática](tipo) [1982367](numero)
 
 - synonym: date
   examples: |
@@ -81,6 +91,7 @@ nlu:
 - synonym: trivia
   examples: |
     - coisas interessantes
+    - coisa interessante
     - curiosidade
     - curiosidades
     - interessantes
@@ -90,3 +101,9 @@ nlu:
   examples: |
     - ano
     - anual
+- regex: numero
+  examples: |
+    - [0-9]+
+- regex: dia_mes
+  examples: |
+   - (0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[012])

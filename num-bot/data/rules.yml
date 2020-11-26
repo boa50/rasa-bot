@@ -25,19 +25,27 @@ rules:
 - rule: Informações sobre algum ano
   steps:
   - intent: ano
-  - action: utter_ano
+  - action: action_get_informacoes
+  - action: utter_entrega_informacao_1
+  - action: utter_entrega_informacao_2
 
 - rule: Curiosidades sobre algum número
   steps:
   - intent: curiosidades
-  - action: utter_curiosidades
+  - action: action_get_informacoes
+  - action: utter_entrega_informacao_1
+  - action: utter_entrega_informacao_2
 
 - rule: Informações sobre alguma data
   steps:
   - intent: data
-  - action: utter_data
+  - action: action_get_informacoes
+  - action: utter_entrega_informacao_1
+  - action: utter_entrega_informacao_2
 
 - rule: Informações matematicas sobre algum numero
   steps:
   - intent: matematica
-  - action: utter_matematica
+  - action: action_get_informacoes
+  - action: utter_entrega_informacao_1
+  - action: utter_entrega_informacao_2

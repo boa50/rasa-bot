@@ -11,6 +11,11 @@ intents:
 
 entities:
   - tipo
+  - numero
+  - dia_mes
+
+actions:
+  - action_get_informacoes
 
 responses:
   utter_saudacao:
@@ -60,16 +65,13 @@ responses:
       Eu posso lhe ajudar de várias maneiras, lhe dando informações interessantes sobre os números. \n
       Posso fornecer informações sobre curiosidades, matemática, algum ano específico ou alguma data. \n
       Se quiser fazer um teste pode fazer a pergunta: \"Quero saber curiosidades sobre qualquer número\".
-      Só tente não utilizar os pronomes indefinidos \"um\" e \"uma\", pois posso acabar me confundindo com o numeral 1 ;)
 
-  utter_ano:
-  - text: "ano"
+  utter_entrega_informacao_1:
+  - text: "Legal, né :)"
+  - text: "Humm, bem interessante..."
+  - text: "Essa eu achei muito boa."
 
-  utter_curiosidades:
-  - text: "curiosidades"
-
-  utter_data:
-  - text: "data"
-
-  utter_matematica:
-  - text: "matematica"
+  utter_entrega_informacao_2:
+  - text: "Se quiser saber mais de alguma coisa pode me perguntar."
+  - text: "Se precisar de mais alguma informação estou aqui."
+  - text: "Caso queira saber de mais alguma coisa, fico à disposição."
