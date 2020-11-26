@@ -14,6 +14,9 @@ from rasa_sdk.executor import CollectingDispatcher
 
 import requests
 
+from ibm_watson import LanguageTranslatorV3
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
+
 class ActionGetInformacoes(Action):
 
     def name(self) -> Text:
@@ -41,10 +44,10 @@ class ActionGetInformacoes(Action):
             valor = numero
 
         text = buscaInformacoes(tipo, valor)
-        # text = traduzTexto(text, api_key)
+        text = traduzTexto(text)
         
-        retorno_debug = f'Tipo: {tipo}; Número: {numero}; Data: {data}'
-        dispatcher.utter_message(text=retorno_debug)
+        # retorno_debug = f'Tipo: {tipo}; Número: {numero}; Data: {data}'
+        # dispatcher.utter_message(text=retorno_debug)
 
         dispatcher.utter_message(text=text)
 
@@ -62,18 +65,20 @@ def buscaInformacoes(tipo='trivia', valor=None):
     return response.text
 
 ### Utilizado para traduzir os textos de retorno da api
-# def traduzTexto(text, api_key):
-#     translator = LanguageTranslatorV3(
-#             version='2020-11-04',
-#             iam_apikey=api_key
-#         )
+def traduzTexto(text):
+    api_key = **COLOCAR AQUI A API-KEY**
+    authenticator = IAMAuthenticator(api_key)
+    translator = LanguageTranslatorV3(
+            version='2020-11-04',
+            authenticator=authenticator
+        )
         
-#     response = translator.translate(
-#             text,
-#             source='en',
-#             target='pt-br'
-#         )
-#     res = response.get_result()
-#     retorno = res['translations'][0]['translation']
+    response = translator.translate(
+            text,
+            source='en',
+            target='pt-br'
+        )
+    res = response.get_result()
+    retorno = res['translations'][0]['translation']
     
-#     return retorno
+    return retorno
