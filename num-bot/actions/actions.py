@@ -13,6 +13,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
 import requests
+from configparser import ConfigParser
 
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
@@ -43,13 +44,13 @@ class ActionGetInformacoes(Action):
         else:
             valor = numero
 
-        text = buscaInformacoes(tipo, valor)
-        text = traduzTexto(text)
+        # text = buscaInformacoes(tipo, valor)
+        # text = traduzTexto(text)
         
-        # retorno_debug = f'Tipo: {tipo}; Número: {numero}; Data: {data}'
-        # dispatcher.utter_message(text=retorno_debug)
+        retorno_debug = f'Tipo: {tipo}; Número: {numero}; Data: {data}'
+        dispatcher.utter_message(text=retorno_debug)
 
-        dispatcher.utter_message(text=text)
+        # dispatcher.utter_message(text=text)
 
         return []
 
@@ -66,7 +67,10 @@ def buscaInformacoes(tipo='trivia', valor=None):
 
 ### Utilizado para traduzir os textos de retorno da api
 def traduzTexto(text):
-    api_key = **COLOCAR AQUI A API-KEY**
+    config_object = ConfigParser()
+    config_object.read('actions/config.ini')
+    api_key = config_object['TRANSLATOR']['api-key']
+
     authenticator = IAMAuthenticator(api_key)
     translator = LanguageTranslatorV3(
             version='2020-11-04',
