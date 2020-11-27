@@ -8,6 +8,7 @@ intents:
   - curiosidades
   - data
   - matematica
+  - outras_informacoes
 
 entities:
   - tipo
@@ -16,6 +17,7 @@ entities:
 
 actions:
   - action_get_informacoes
+  - action_get_outras_informacoes
 
 responses:
   utter_saudacao:
@@ -75,3 +77,8 @@ responses:
   - text: "Se quiser saber mais de alguma coisa pode me perguntar."
   - text: "Se precisar de mais alguma informação estou aqui."
   - text: "Caso queira saber de mais alguma coisa, fico à disposição."
+
+  utter_outras_informacoes:
+  - text: "Que pena não ter gostado, mas encontrei essa curiosidade aqui oh:"
+  - text: "Vix, veja se você gosta dessa outra informação."
+  - text: "Eita, vou lhe falar uma boa agora então ;)"

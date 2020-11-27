@@ -15,12 +15,8 @@ pipeline:
   - name: SpacyFeaturizer
     pooling: mean
   - name: DIETClassifier
-    epochs: 50
+    epochs: 100
   - name: EntitySynonymMapper
-  # - name: DucklingEntityExtractor
-  #   url: "http://localhost:8000"
-  #   dimensions: ["time"]
-  #   timezone: "America/Sao_Paulo"
   - name: RegexEntityExtractor
     case_sensitive: False
     use_lookup_tables: False

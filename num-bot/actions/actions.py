@@ -27,30 +27,38 @@ class ActionGetInformacoes(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        tipo = None
-        numero = None
-        data = None
-
-        for entity in tracker.latest_message['entities']:
-            if entity['entity'] == 'tipo':
-                tipo = entity['value']
-            elif entity['entity'] == 'numero':
-                numero = entity['value']
-            elif entity['entity'] == 'dia_mes':
-                data = entity['value'][3:] + '/' + entity['value'][:2]
+        tipo = next(tracker.get_latest_entity_values('tipo'), None)
+        numero = next(tracker.get_latest_entity_values('numero'), None)
+        data = next(tracker.get_latest_entity_values('dia_mes'), None)
 
         if data:
-            valor = data
+            valor = data[3:] + '/' + data[:2]
         else:
             valor = numero
 
-        # text = buscaInformacoes(tipo, valor)
-        # text = traduzTexto(text)
-        
-        retorno_debug = f'Tipo: {tipo}; Número: {numero}; Data: {data}'
-        dispatcher.utter_message(text=retorno_debug)
+        text = buscaInformacoes(tipo, valor)
+        text = traduzTexto(text)
 
-        # dispatcher.utter_message(text=text)
+        dispatcher.utter_message(text=text)
+        
+        # retorno_debug = f'Tipo: {tipo}; Número: {numero}; Data: {data}'
+        # dispatcher.utter_message(text=retorno_debug)
+
+        return []
+
+class ActionGetOutrasInformacoes(Action):
+
+    def name(self) -> Text:
+        return "action_get_outras_informacoes"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        text = buscaInformacoes()
+        text = traduzTexto(text)
+
+        dispatcher.utter_message(text=text)
 
         return []
 

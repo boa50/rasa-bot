@@ -69,6 +69,20 @@ nlu:
     - o que um [matemático](tipo) pode me dizer sobre o número [1837](numero)
     - [matemáticos](tipo) qualquer
     - [matemática](tipo) [1982367](numero)
+- intent: outras_informacoes
+  examples: |
+    - não gostei dessa informação
+    - achei bem ruim essa
+    - não achei nada interessante
+    - estava esperando algo melhor
+    - não vi nada de bom nisso
+    - esperava mais de você
+    - não tem nada melhor pra mim por aí não?
+    - essa não passou nem perto
+    - queria algo mais divertido
+    - essa foi bem fraquinha
+    - nunca vi nada pior na minha vida
+    - que coisa mais sem graça
 
 - synonym: date
   examples: |

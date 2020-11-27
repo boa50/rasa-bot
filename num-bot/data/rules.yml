@@ -49,3 +49,11 @@ rules:
   - action: action_get_informacoes
   - action: utter_entrega_informacao_1
   - action: utter_entrega_informacao_2
+
+- rule: Outras informações sobre o mesmo assunto
+  steps:
+  - intent: outras_informacoes
+  - action: utter_outras_informacoes
+  - action: action_get_outras_informacoes
+  - action: utter_entrega_informacao_1
+  - action: utter_entrega_informacao_2
