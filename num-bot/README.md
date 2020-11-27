@@ -7,7 +7,7 @@
 
 **LanguageTranslatorV3**
 - $pip install ibm-watson
-- *É preciso ter um cadastro no serviço IBM Language Translator: https://www.ibm.com/watson/services/language-translator/*
+- É preciso ter um cadastro no serviço IBM Language Translator: https://www.ibm.com/watson/services/language-translator/
 - Renomear o arquivo actions/config.ini_example para actions/config.ini, copiar a api-key para a o campo *api-key* dentro desse novo arquivo.
 
 # Comandos a serem executados
