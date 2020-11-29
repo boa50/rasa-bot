@@ -9,6 +9,7 @@ nlu:
     - bom dia
     - boa tarde
     - boa noite
+    - tudo bem?
 - intent: adeus
   examples: |
     - até a próxima
@@ -19,6 +20,7 @@ nlu:
     - somente isso
     - tchau
     - xau
+    - adeus
 - intent: funcionalidades
   examples: |
     - como faço para perguntar algo
@@ -29,6 +31,8 @@ nlu:
     - quais ações posso tomar
     - quais as funcionalidades você possui
     - quais perguntas posso fazer
+    - como você consegue me ajudar
+    - quais coisas você pode me dizer
 - intent: ano
   examples: |
     - [ano](tipo) aleatório
