@@ -19,6 +19,21 @@ actions:
   - action_get_informacoes
   - action_get_outras_informacoes
 
+slots:
+  tipo:
+    type: text
+    influence_conversation: false
+
+forms:
+  ano_form:
+    tipo:
+    - type: from_entity
+      entity: tipo
+  curiosidades_form:
+    tipo:
+    - type: from_entity
+      entity: tipo
+
 responses:
   utter_saudacao:
   - text: >

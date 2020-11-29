@@ -22,16 +22,32 @@ rules:
   - intent: funcionalidades
   - action: utter_funcionalidades
 
-- rule: Informações sobre algum ano
+- rule: Formulário de ano
   steps:
   - intent: ano
+  - action: ano_form
+  - active_loop: ano_form
+- rule: Informações sobre o ano
+  condition:
+  - active_loop: ano_form
+  steps:
+  - action: ano_form
+  - active_loop: null
   - action: action_get_informacoes
   - action: utter_entrega_informacao_1
   - action: utter_entrega_informacao_2
 
-- rule: Curiosidades sobre algum número
+- rule: Formulário de curiosidades
   steps:
   - intent: curiosidades
+  - action: curiosidades_form
+  - active_loop: curiosidades_form
+- rule: Curiosidades sobre algum número
+  condition:
+  - active_loop: curiosidades_form
+  steps:
+  - action: curiosidades_form
+  - active_loop: null
   - action: action_get_informacoes
   - action: utter_entrega_informacao_1
   - action: utter_entrega_informacao_2
